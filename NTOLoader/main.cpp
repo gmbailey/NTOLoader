@@ -4,6 +4,7 @@
 #include <string>
 #include <algorithm>
 #include <tchar.h>
+#include <conio.h>
 
 using namespace std;
 
@@ -109,8 +110,11 @@ int main() {
 		CloseHandle(pi.hProcess);
 		CloseHandle(pi.hThread);
 	}
-	else
+	else {
 		cout << "error: " << GetLastError() << '\n';
+		cout << "Press any key to exit.";
+		_getch();
+	}
 
 	return 0;
 }
